@@ -4,7 +4,7 @@ document.addEventListener("touchstart", function() {},false);
 // the good stuff
 var $tabController = $('.tab-controller li');
 var $tabContent = $('.tab-content');
-var defaultActiveTab = 4; 
+var defaultActiveTab = 1; 
 
 $(document).ready(function() {
   $('body').fadeIn(); 
