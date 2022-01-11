@@ -49,3 +49,34 @@ if ('serviceWorker' in navigator){
     .then(reg => console.log('service worker is registered', reg))
     .catch(err => console.log('service worker not registered', err));
 }
+
+window.isUpdateAvailable = new Promise(function (resolve, reject) {
+  // lazy way of disabling service workers while developing
+  if (
+    "serviceWorker" in navigator &&
+    ["", ""].indexOf(location.hostname) === -1
+  ) {
+    // register service worker file
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then((reg) => {
+        reg.onupdatefound = () => {
+          const installingWorker = reg.installing;
+          installingWorker.onstatechange = () => {
+            switch (installingWorker.state) {
+              case "installed":
+                if (navigator.serviceWorker.controller) {
+                  // new update available
+                  resolve(true);
+                } else {
+                  // no update available
+                  resolve(false);
+                }
+                break;
+            }
+          };
+        };
+      })
+      .catch((err) => console.error("[SW ERROR]", err));
+  }
+});
