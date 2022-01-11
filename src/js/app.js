@@ -1,4 +1,4 @@
-const appVersion = "1.0.1";
+const appVersion = "dev::1.0.0";
 
 $('#versionDisplay').html(appVersion)
 
