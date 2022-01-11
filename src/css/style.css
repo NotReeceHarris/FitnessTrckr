@@ -8,12 +8,10 @@
     --tabTopBackground: #fff;
 
     /* Bottom Tab*/
-    --tabBottomBorderTop: ##eee;
+    --tabBottomBorderTop: #252525;
     --tabBottomBackground: #252525;
     --tabBottomActive: #c94d4d;
-
-	/* Stop watch */
-	--stopwatchTime: #252525;
+	--tabBottonColor: #fff;
 }
 
 
@@ -62,7 +60,7 @@ html {
 	 border-top: 1px solid var(--tabBottomBorderTop);
 }
  .tab-container .tab-controller li {
-	 color: #fff;
+	 color: var(--tabBottonColor);
 	 font-size: 10px;
 	 text-decoration: none;
 	 text-align: center;

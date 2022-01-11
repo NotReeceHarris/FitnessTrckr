@@ -4,13 +4,12 @@ document.addEventListener("touchstart", function() {},false);
 // the good stuff
 var $tabController = $('.tab-controller li');
 var $tabContent = $('.tab-content');
-var defaultActiveTab = 0; 
 
 $(document).ready(function() {
   $('body').fadeIn(); 
   
-  $tabController.eq(defaultActiveTab).addClass('active'); // show X tab by default
-  $tabContent.eq(defaultActiveTab).addClass('active'); // show X content by default  
+  $tabController.eq(ActiveTab).addClass('active'); // show X tab by default
+  $tabContent.eq(ActiveTab).addClass('active'); // show X content by default  
   
   $tabController.on('click', function() {
     var tabNumber = $(this).index(); // get index number of clicked tab
