@@ -1,4 +1,4 @@
-const appVersion = "prod::1.0.0";
+const appVersion = "prod::1.0.1";
 
 $('#versionDisplay').html(appVersion)
 
@@ -75,7 +75,7 @@ if ('serviceWorker' in navigator) {
   // wait for the page to load
   window.addEventListener('load', async () => {
       // register the service worker from the file specified
-      const registration = await navigator.serviceWorker.register('/service-worker.js')
+      const registration = await navigator.serviceWorker.register('/serviceWorker.js')
 
       // ensure the case when the updatefound event was missed is also handled
       // by re-invoking the prompt when there's a waiting Service Worker
